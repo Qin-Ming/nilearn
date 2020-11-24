@@ -1,7 +1,7 @@
-"""Analysis of an fMRI dataset with a Finite Impule Response (FIR) model
+"""Analysis of an fMRI dataset with a Finite Impulse Response (FIR) model
 =====================================================================
 
-FIR models are used to estimate the hemodyamic response non-parametrically.
+FIR models are used to estimate the hemodynamic response non-parametrically.
 The example below shows that they're good to do statistical inference
 even on fast event-related fMRI datasets.
 
@@ -29,7 +29,7 @@ events = pd.read_table(events_file)
 
 
 #########################################################################
-# Next solution is to try Finite Impulse Reponse (FIR) models: we just
+# Next solution is to try Finite Impulse Response (FIR) models: we just
 # say that the hrf is an arbitrary function that lags behind the
 # stimulus onset.  In the present case, given that the numbers of
 # conditions is high, we should use a simple FIR model.
@@ -100,7 +100,7 @@ plot_contrast_matrix(contrasts['left-right'], design_matrix)
 #########################################################################
 # Take a breath.
 #
-# We can now  proceed by estimating the contrasts and displaying them.
+# We can now proceed by estimating the contrasts and displaying them.
 
 import matplotlib.pyplot as plt
 from nilearn.plotting import plot_stat_map
@@ -113,7 +113,7 @@ for index, (contrast_id, contrast_val) in enumerate(contrasts.items()):
     plot_stat_map(
         z_map, display_mode='z', threshold=3.0, title=contrast_id, axes=ax,
         cut_coords=1)
-    plt.show()
+plt.show()
 
 #########################################################################
 # The result is acceptable. Note that we're asking a lot of questions
